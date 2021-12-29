@@ -3,3 +3,5 @@ TgCrypto
 umongo
 dnspython
 heroku3
+motor 
+aiofiles
