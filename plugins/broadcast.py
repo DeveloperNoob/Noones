@@ -9,14 +9,14 @@ import asyncio
 import datetime
 import aiofiles
 from random import choice 
-from config import Config
+from sample_config import Config
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
 from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid
 from database import Database
 
-db = Database(DATABASE_URI, "FnTelegraphBot")
+db = db = Database()
 
 async def send_msg(user_id, message):
 	try:
