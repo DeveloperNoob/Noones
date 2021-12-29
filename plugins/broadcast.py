@@ -16,7 +16,7 @@ from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, Peer
 from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid
 from database import Database
 
-db = db = Database()
+db = Database()
 
 async def send_msg(user_id, message):
 	try:
