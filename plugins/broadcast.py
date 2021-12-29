@@ -15,7 +15,7 @@ from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, Peer
 from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid
 from database import Database
 
-
+db = Database(DATABASE_URI, "FnTelegraphBot")
 
 async def send_msg(user_id, message):
 	try:
