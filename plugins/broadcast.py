@@ -15,6 +15,8 @@ from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked, Peer
 from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid
 from database import Database
 
+
+
 async def send_msg(user_id, message):
 	try:
 		await message.copy(chat_id=user_id)
@@ -31,7 +33,7 @@ async def send_msg(user_id, message):
 	except Exception as e:
 		return 500, f"{user_id} : {traceback.format_exc()}\n"
 	
-@trojanz.on_message(filters.private & filters.command("broadcast") & filters.user(BOT_OWNER) & filters.reply)
+@trojanz.on_message(filters.private & filters.command("broadcast") & filters.user(AUTH_USERS) & filters.reply)
 async def broadcast(bot, update):
 	broadcast_ids = {}
 	all_users = await db.get_all_users()
